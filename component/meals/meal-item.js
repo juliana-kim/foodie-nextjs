@@ -1,14 +1,18 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
 
-import classes from './meal-item.module.css';
+import classes from "./meal-item.module.css";
 
 export default function MealItem({ title, slug, image, summary, creator }) {
   return (
     <article className={classes.meal}>
       <header>
         <div className={classes.image}>
-          <Image src={image} alt={title} fill />
+          <Image
+            src={`https://maxschwarzmueller-nextjs-demo-users-image.s3.amazonaws.com/${image}`}
+            alt={title}
+            fill
+          />
         </div>
         <div className={classes.headerText}>
           <h2>{title}</h2>
